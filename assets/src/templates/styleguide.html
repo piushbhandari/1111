@@ -1,0 +1,554 @@
+{% extends "partials/layout.html" %}
+
+{% set pagetitle = "Styleguide" %}
+{% block pagetitle %} {{ pagetitle }} {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Style Guide</h1>
+
+            <hr />
+
+            <!-- Templates -->
+            <h2>Templates</h2>
+            {% include "partials/template-listing.html" %}
+
+            <!-- Colors -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Colors</h2>
+
+                    <div class="color-block color-primary">
+                        Color Primary
+                    </div>
+
+                    <div class="color-block color-secondary">
+                        Color Secondary
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+            <!-- Headings -->
+
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Headings</h2>
+
+                    <h1>Heading 1</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                    <h4>Heading 4</h4>
+                    <h5>Heading 5</h5>
+                    <h6>Heading 6</h6>
+                </div>
+
+                <!-- Text Styles -->
+
+                <div class="col-md-4">
+                    <h2>Text Styles</h2>
+
+                    <p><strong>This is a paragraph</strong>. Lorem ipsum dolor sit amet, consectetur adipisicing elit. <em>Ipsum ab cumque</em> veniam nisi nihil at        quaerat. Totam tempora quo magni commodi ipsa. Alias ducimus <strike>aut voluptate</strike>, esse est inventore dolore.</p>
+
+
+                    <p class="larger">class="larger"</p>
+                    <p class="largest">class="largest"</p>
+                    <p class="smaller">class="smaller"</p>
+                    <p class="smallest">class="smallest"</p>
+
+                    <p><a href="#">This is a link</a></p>
+
+                    <blockquote cite="http://example.com/facts">
+                        <p>Here is a sweet Blockquote</p>
+                    </blockquote>
+                </div>
+
+                <!-- Lists -->
+
+                <div class="col-md-4">
+                    <h2>Lists</h2>
+
+                    <ul>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                    </ul>
+
+                    <ol>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                      <li>List item</li>
+                    </ol>
+
+                    <dl>
+                        <dt>DT item</dt>
+                        <dd>DD item</dd>
+                        <dt>DT item</dt>
+                        <dd>DD item</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <hr />
+
+
+            <div class="row">
+                <div class="col-md-4">
+
+                    <!-- Tables -->
+
+                    <h2>Tables</h2>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Table Heading 1</th>
+                                <th>Table Heading 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Table Item 1</td>
+                                <td>Table Item 2</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Table Footer Item 1</td>
+                                <td>Table Footer Item 2</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <!-- Buttons -->
+
+                <div class="col-md-4">
+                    <h2>Buttons</h2>
+
+                    <a href="#" class="button">Button!</a>
+                </div>
+            </div>
+
+            <hr />
+
+            <!-- Global Modules -->
+
+            <h2>Global Modules</h2>
+
+            <h3>Modules</h3>
+
+            <div class="module">
+                <div class="module-header">
+                    <h2>Module Header</h2>
+                </div>
+
+                <div class="module-content">
+                    <p>Module Content!</p>
+                </div>
+            </div>
+
+            <!-- Global Widgets -->
+
+            <h3>Widgets</h3>
+
+            <div class="widget">
+                <div class="widget-header">
+                    <h3>Widget Header</h3>
+                </div>
+
+                <div class="widget-content">
+                    <p>Widget Content!</p>
+                </div>
+            </div>
+
+            <!-- Forms -->
+
+            <h2>Forms (Including errors)</h2>
+            <div class="FormPanel">
+                <table class="EditingFormTable">
+                    <tbody>
+                        <tr>
+                            <td class="FieldLabel" title="Tooltip goes here">
+                                <label class="EditingFormLabel" for="control-0">Text box:</label>
+                            </td>
+                            <td class="EditingFormValueCell" title="Tooltip goes here">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control">
+                                    <input type="text" value="Default value" maxlength="500" id="control-0" class="form-control">
+                                </div>
+                                <div class="ExplanationText">Explanation text goes here. All fields but this and checkboxes are required.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <label class="EditingFormLabel" for="control-1">Regular text box:</label>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control Error">
+                                    <input type="text" maxlength="500" id="control-1" class="form-control">
+                                </div>
+                                <span class="EditingFormErrorLabel">Please enter a value.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <label class="EditingFormLabel" for="control-2">Check box:</label>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control">
+                                    <span class="CheckBoxField checkbox">
+                                                <input id="control-2" type="checkbox">
+                                                    <label for="control-2">&nbsp;</label>
+                                                </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <label class="EditingFormLabel" for="control-3">Check box:</label>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control">
+                                    <span class="CheckBoxField checkbox">
+                                                    <input id="control-3" type="checkbox" checked="checked">
+                                                        <label for="control-3">&nbsp;</label>
+                                                    </span>
+                                </div>
+                                <div class="ExplanationText">Default checked. Not required since checkbox</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <label class="EditingFormLabel" for="control-4">Drop-down list:</label>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control">
+                                    <select id="control-4" class="DropDownField form-control">
+                                        <option selected="selected" value="Option 1">Option 1</option>
+                                        <option value="Option 2">Option 2</option>
+                                        <option value="Option 3">Option 3</option>
+                                    </select>
+                                    <div class="autocomplete"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <label class="EditingFormLabel" for="control-5">Email:</label>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control Error">
+                                    <input type="text" maxlength="254" id="control-5" class="form-control">
+                                    <span class="form-control-error" style="display:none;"></span>
+                                </div>
+                                <span class="EditingFormErrorLabel">Please enter a value.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <label class="EditingFormLabel" for="control-6">List box:</label>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control Error">
+                                    <select size="4" multiple="multiple" id="control-6" class="form-control">
+                                        <option value="Option 1">Option 1</option>
+                                        <option value="Option 2">Option 2</option>
+                                        <option value="Option 3">Option 3</option>
+                                    </select>
+                                </div>
+                                <span class="EditingFormErrorLabel">Please enter a value.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <label class="EditingFormLabel" for="control-7">Country selector:</label>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control Error">
+                                    <div class="country-selector">
+                                        <div>
+                                            <div class="control-group-inline">
+                                                <select id="control-7" class="DropDownField form-control">
+                                                    <option value="Afghanistan" data-hash="c67faa2e97d543f0b2b85ba58e8cfa35b25abad4603b427f7d1f3b64f5e24d0c">Afghanistan</option>
+                                                </select>
+                                            </div>
+                                            <input type="hidden" id="control-8">
+                                            <input type="hidden" id="control-9" value="1b8bb396-6976-40e6-96d5-7573514af360">
+                                            <input type="hidden" id="control-10">
+                                            <input type="hidden" id="control-11">
+                                            <input type="hidden" id="control-12" value="cb52efc107237789f7be03c58bf9a23c21aeec402197b25b702a68b4b6fe7a66">
+                                            <input type="hidden" id="control-13">
+                                        </div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <span class="EditingFormErrorLabel">Please enter a value.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <span class="EditingFormLabel">Multiple choice:</span>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control Error">
+                                    <span class="checkbox checkbox-list-vertical">
+                                                                                    <input id="control-14" type="checkbox" value="Option 1">
+                                                                                        <label for="control-14">Option 1</label>
+                                                                                        <br>
+                                                                                            <input id="control-15" type="checkbox" value="Option 2">
+                                                                                                <label for="control-15">Option 2</label>
+                                                                                                <br>
+                                                                                                    <input id="control-16" type="checkbox" value="Option 3">
+                                                                                                        <label for="control-16">Option 3</label>
+                                                                                                    </span>
+                                </div>
+                                <span class="EditingFormErrorLabel">Please enter a value.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <span class="EditingFormLabel">Radio buttons:</span>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control Error">
+                                    <span class="radio radio-list-vertical">
+                                                                                                        <input id="control-17" type="radio" value="Option 1">
+                                                                                                            <label for="control-17">Option 1</label>
+                                                                                                            <br>
+                                                                                                                <input id="control-18" type="radio" value="Option 2">
+                                                                                                                    <label for="control-18">Option 2</label>
+                                                                                                                    <br>
+                                                                                                                        <input id="control-19" type="radio" value="Option 3">
+                                                                                                                            <label for="control-19">Option 3</label>
+                                                                                                                        </span>
+                                </div>
+                                <span class="EditingFormErrorLabel">Please enter a value.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <label class="EditingFormLabel" for="control-20">Text area:</label>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control Error">
+                                    <textarea rows="2" cols="20" id="control-20" class="form-control"></textarea>
+                                </div>
+                                <span class="EditingFormErrorLabel">Please enter a value.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <label class="EditingFormLabel" for="control-21">Text box:</label>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control Error">
+                                    <input type="text" maxlength="500" id="control-21" class="form-control">
+                                </div>
+                                <span class="EditingFormErrorLabel">Please enter a value.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <label class="EditingFormLabel" for="control-22">U.S. phone number:</label>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control Error">
+                                    <span class="form-control-text">(</span>
+                                    <input type="text" maxlength="3" id="control-22" class="input-width-15 form-control">
+                                    <span class="form-control-text">)</span>
+                                    <input type="text" maxlength="3" id="control-23" class="input-width-15 form-control">
+                                    <span class="form-control-text">-</span>
+                                    <input type="text" maxlength="4" id="control-24" class="input-width-20 form-control">
+                                    <label for="control-23" class="sr-only">Second three digits</label>
+                                    <label for="control-24" class="sr-only">Last four digits</label>
+                                </div>
+                                <span class="EditingFormErrorLabel">Please enter a value.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <label class="EditingFormLabel" for="control-25">U.S. ZIP code:</label>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control Error">
+                                    <input type="text" maxlength="5" id="control-25" class="input-width-20 form-control">
+                                </div>
+                                <span class="EditingFormErrorLabel">Please enter a value.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <label class="EditingFormLabel" for="control-26">Upload file:</label>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control Error">
+                                    <div class="uploader">
+                                        <div class="uploader-main">
+                                            <div class="uploader-upload">
+                                                <input type="file" id="control-26" class="uploader-input-file">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="submit" value="" id="control-27" class="HiddenButton" style="display:none;">
+                                </div>
+                                <span class="EditingFormErrorLabel">Please enter a value.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="FieldLabel">
+                                <label class="EditingFormLabel" for="control-28">Security code:</label>
+                            </td>
+                            <td class="EditingFormValueCell">
+                                <div class="EditingFormControlNestedControl editing-form-control-nested-control Error">
+                                    <div>
+                                        <span>Enter security code:</span>
+                                    </div>
+                                    <table class="CaptchaTable">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" id="control-28" class="CaptchaTextBox form-control">
+                                                </td>
+                                                <td>
+                                                    &nbsp;
+                                                    <img src="https://via.placeholder.com/80x20" alt="Security code">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <span class="EditingFormErrorLabel">Please enter a value.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="EditingFormButtonLeftCell"></td>
+                            <td class="EditingFormButtonCell">
+                                <input type="submit" value="Submit" id="control-29" class="FormButton btn btn-primary">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Expanders -->
+
+            <h2>Expandable examples</h2>
+            <div class="expandable-examples">
+                <div class="styleguide-tabs">
+                    <button class="styleguide-tab active" data-expander="tab-1" data-expander-hold data-expander-tabs data-expander-css>Tab 1</button>
+                    <button class="styleguide-tab" data-expander="tab-2" data-expander-hold data-expander-tabs data-expander-css>Tab 2</button>
+                    <button class="styleguide-tab" data-expander="tab-3" data-expander-hold data-expander-tabs data-expander-css>Tab 3</button>
+                </div>
+                <div>
+                    <button class="styleguide-mob-tab active" data-expander="tab-1" data-expander-hold data-expander-tabs data-expander-css>Open 1</button>
+                    <div class="styleguide active" id="tab-1">Content 1</div>
+                </div>
+                <div>
+                    <button class="styleguide-mob-tab" data-expander="tab-2" data-expander-hold data-expander-tabs data-expander-css>Open 2</button>
+                    <div id="tab-2">Content 2</div>
+                </div>
+                <div>
+                    <button class="styleguide-mob-tab" data-expander="tab-3" data-expander-hold data-expander-tabs data-expander-css>Open 3</button>
+                    <div id="tab-3">Content 3</div>
+                </div>
+                <div>
+                    <a href="#" data-expander="content-1" data-expander-css>Toggle content [CSS animation]</a>
+                    <div id="content-1">
+                        <a href="#">Link</a>
+                        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut placeat, exercitationem sit consectetur iste veritatis? Ipsam id, perferendis rem mollitia libero vel qui blanditiis ad vero repellat ab dicta molestias.</div>
+                    </div>
+                </div>
+                <div>
+                    <button data-expander="content-2">Toggle content [JS animation (default)]</button>
+                    <div id="content-2" style="display: none;">
+                        <label for="search-1">Search our site</label>
+                        <input id="search-1" type="text" placeholder="Search our site">
+                        <button>Search</button>
+                    </div>
+                </div>
+                <div>
+                    <button data-expander="content-3" data-expander-hold data-expander-css>Toggle content [CSS animation][Hold]</button>
+                    <div id="content-3">
+                        <label for="search-2">Search our site</label>
+                        <input id="search-2" type="text" placeholder="Search our site">
+                        <button>Search</button>
+                    </div>
+                </div>
+                <div>
+                    <button data-expander="content-4" data-expander-hold data-expander-css class="active">Toggle content [CSS animation][Hold][Active by default]</button>
+                    <div id="content-4" class="active">
+                        <label for="search-3">Search our site</label>
+                        <input id="search-3" type="text" placeholder="Search our site">
+                        <button>Search</button>
+                    </div>
+                </div>
+                <div>
+                    <button data-expander="content-5" data-expander-css data-expander-overlay>Toggle content [CSS animation][Overlay]</button>
+                    <div id="content-5">
+                        Opening this will trigger a site-wide overlay effect by toggling the <code>js-data-toggled</code> class on the HTML element.
+                    </div>
+                </div>
+                <div>
+                    <button data-expander="content-6" data-expander-css>Toggle content below #1 [CSS animation]</button>
+                    <button data-expander="content-6" data-expander-css>Toggle content below #2 [CSS animation]</button>
+                    <div id="content-6">
+                        This can be triggered by multiple data-expanders (good for desktop/mobile triggers like a search dropdowns)
+                    </div>
+                </div>
+                <div class="accordion" data-expander data-expander-css data-expander-hold>
+                    <a class="accordion-toggle" href="#" data-expander-toggle>Click here to toggle accordion [CSS Animation][Hold]</a>
+                    <div class="accordion-target" data-expander-target>
+                        <p>This can be used without setting up unique IDs for the target. It can be useful for when clients want to add custom dropdown/accordion content throughout the site.</p>
+                        <p>Nihil vero iure sint consequuntur eum officiis iusto mollitia deleniti suscipit quis, veritatis harum cumque, culpa minima fuga eius accusamus aliquid tempore assumenda, numquam illum illo. Reiciendis possimus aliquam natus.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Global SVGs -->
+            <h2>SVGs</h2>
+            <div id="svg-list"></div>
+        </div>
+    </div>
+</div>
+<script>
+    const outputElement = document.getElementById("svg-list");
+    const svgLegend = "../images/svg-legend.svg";
+    const parser = new DOMParser();
+
+    fetch(svgLegend)
+        .then(response => response.text())
+        .then(svg => {
+            const parsedSvg = parser.parseFromString(svg, "image/svg+xml");
+            const svgSymbols = parsedSvg.querySelectorAll("symbol");
+
+            svgSymbols.forEach(symbol => {
+                const item = {
+                    id: symbol.getAttribute("id"),
+                    title: symbol.querySelector("title") ? symbol.querySelector("title").textContent : ""
+                }
+
+                const markup = `
+                    <div class="item">
+                        <svg>
+                            <use xlink:href="${svgLegend}#${item.id}" />
+                        </svg>
+                        <div class="title">${item.title}</div>
+                        <div class="ident">#${item.id}</div>
+                    </div>
+                `;
+
+                outputElement.insertAdjacentHTML('beforeend', markup);
+            });
+        })
+        .catch(error => {
+            console.log(error);
+        });
+</script>
+{% endblock %}
