@@ -1,0 +1,164 @@
+{% extends "partials/layout.html" %}
+
+{% set pagetitle = "Videos" %}
+{% block pagetitle %} {{ pagetitle }} {% endblock %}
+
+{% block content %}
+<div class="page-banner" style="background-image: url('https://via.placeholder.com/1920x275');">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="page-banner-inner">
+                    <h1 class="page-banner-heading">{{ pagetitle }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="breadcrumbs-container container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                    <a href="#" class="breadrcumbs__link">Home</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#" class="breadrcumbs__link">About Us</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <span class="breadcrumbs__active">{{ pagetitle }}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="interior-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="interior-content">
+
+
+
+                    <div class="video-stage">
+                        <div class="video-stage__video">
+                            <div id="player"></div>
+                        </div>
+                        <div class="video-stage__info">
+                            <h2 class="video-stage__title">This is the title of the video</h2>
+                            <p class="video-stage__description">This is the short description for the video</p>
+                        </div>
+                        <div class="video-stage__listing">
+                            <ul class="video-listing" id="paginated-listing">
+                                <li class="video-listing__item">
+                                    <a href="https://via.placeholder.com/340x200" class="video-link b-lazy" data-src="https://via.placeholder.com/340x200" data-path="LXb3EKWsInQ">
+                                        <span class="video-link__title">Title Here</span>
+                                    </a>
+                                </li>
+                                <li class="video-listing__item">
+                                    <a href="https://via.placeholder.com/340x200" class="video-link b-lazy" data-src="https://via.placeholder.com/340x200" data-path="2MpUj-Aua48">
+                                        <span class="video-link__title">Title Here</span>
+                                    </a>
+                                </li>
+                                <li class="video-listing__item">
+                                    <a href="https://via.placeholder.com/340x200" class="video-link b-lazy" data-src="https://via.placeholder.com/340x200" data-path="LXb3EKWsInQ">
+                                        <span class="video-link__title">Title Here</span>
+                                    </a>
+                                </li>
+                                <li class="video-listing__item">
+                                    <a href="https://via.placeholder.com/340x200" class="video-link b-lazy" data-src="https://via.placeholder.com/340x200" data-path="2MpUj-Aua48">
+                                        <span class="video-link__title">Title Here</span>
+                                    </a>
+                                </li>
+                                <li class="video-listing__item">
+                                    <a href="https://via.placeholder.com/340x200" class="video-link b-lazy" data-src="https://via.placeholder.com/340x200" data-path="LXb3EKWsInQ">
+                                        <span class="video-link__title">Title Here</span>
+                                    </a>
+                                </li>
+                                <li class="video-listing__item">
+                                    <a href="https://via.placeholder.com/340x200" class="video-link b-lazy" data-src="https://via.placeholder.com/340x200" data-path="2MpUj-Aua48">
+                                        <span class="video-link__title">Title Here</span>
+                                    </a>
+                                </li>
+                                <li class="video-listing__item">
+                                    <a href="https://via.placeholder.com/340x200" class="video-link b-lazy" data-src="https://via.placeholder.com/340x200" data-path="LXb3EKWsInQ">
+                                        <span class="video-link__title">Title Here</span>
+                                    </a>
+                                </li>
+                                <li class="video-listing__item">
+                                    <a href="https://via.placeholder.com/340x200" class="video-link b-lazy" data-src="https://via.placeholder.com/340x200" data-path="2MpUj-Aua48">
+                                        <span class="video-link__title">Title Here</span>
+                                    </a>
+                                </li>
+                                <li class="video-listing__item">
+                                    <a href="https://via.placeholder.com/340x200" class="video-link b-lazy" data-src="https://via.placeholder.com/340x200" data-path="LXb3EKWsInQ">
+                                        <span class="video-link__title">Title Here</span>
+                                    </a>
+                                </li>
+                                <li class="video-listing__item">
+                                    <a href="https://via.placeholder.com/340x200" class="video-link b-lazy" data-src="https://via.placeholder.com/340x200" data-path="2MpUj-Aua48">
+                                        <span class="video-link__title">Title Here</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="js-pagination">
+                                <button class="js-pagination__previous">
+                                    <svg aria-hidden="true" focusable="false">
+                                        <use xlink:href="../images/svg-legend.svg#icon-chevron-left"></use>
+                                    </svg>
+                                    <span class="visually-hidden">Go to previous page</span>
+                                </button>
+                                <div class="js-pagination-inner"></div>
+                                <button class="js-pagination__next">
+                                    <svg aria-hidden="true" focusable="false">
+                                        <use xlink:href="../images/svg-legend.svg#icon-chevron-right"></use>
+                                    </svg>
+                                    <span class="visually-hidden">Go to next page</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="interior-bottom">
+
+</div>
+{% endblock %}
+{% block bottomScripts %}
+    <script>
+        var tag = document.createElement('script');
+
+        tag.src = "//www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: 'Bey4XXJAqS8'
+            });
+        }
+
+        $('.video-link').on('click', function(e){
+            var path = $(this).data('path');
+            console.log(path);
+            $("body,html").animate({ scrollTop: ($(".video-stage").offset().top - $('.site-header').height())},200);
+            player.loadVideoById(path);
+            e.preventDefault();
+        });
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        function stopVideo() {
+            player.stopVideo();
+        }
+    </script>
+{% endblock %}
