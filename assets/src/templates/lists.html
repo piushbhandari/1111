@@ -1,0 +1,252 @@
+{% extends "partials/layout.html" %}
+
+{% set pagetitle = "Lists" %}
+{% block pagetitle %} {{ pagetitle }} {% endblock %}
+
+{% block content %}
+<div class="interior-top">
+    <div class="page-extra-container container">
+        <div class="row">
+            <div class="col-xs-12 page-extra-col">
+                <div class="breadcrumbs">
+                    <a href="#">Home</a>
+                    <a href="#">Company</a>
+                    <span>{{ pagetitle }}</span>
+                </div>
+                <div class="page-tools">
+                    <button id="js-share" class="page-tools-item">
+                        <svg aria-hidden="true" focusable="false">
+                            <use xlink:href="../images/svg-legend.svg#icon-share"></use>
+                        </svg>
+                        <span>Share</span>
+                    </button>
+                    <button id="js-print" class="page-tools-item">
+                        <svg aria-hidden="true" focusable="false">
+                            <use xlink:href="../images/svg-legend.svg#icon-print"></use>
+                        </svg>
+                        <span>Print</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="maincontent" class="page-banner" style="background-image: url('https://via.placeholder.com/1920x275');" tabindex="-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="page-banner-inner">
+                        <h1 class="page-banner-heading header white">{{ pagetitle }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="interior-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 interior-content-wrapper">
+                <div class="interior-content">
+
+                    <form>
+                        <div class="filters">
+                            <div class="filter">
+                                <label class="filter__label" for="filterBy">Filter By</label>
+                                <select class="filter__select" id="filterBy">
+                                    <option>Filter By</option>
+                                </select>
+                            </div>
+                            <div class="filter">
+                                <label class="filter__label" for="sortBy">Sort By</label>
+                                <select class="filter__select" id="sortBy">
+                                    <option>Sort By</option>
+                                </select>
+                            </div>
+                            <div class="filter filter--date">
+                                <fieldset class="filter__fieldset">
+                                    <legend class="filter__legend"><span class="visually-hidden">Sort by date: </span>From Date</legend>
+                                    <span class="visually-hidden" id="fromDateHint">Example: 01 30 1987</span>
+                                    <div class="filter__fieldset-content">
+                                        <div class="filter__inner-field">
+                                            <label class="filter__label filter__label--date" for="fromMonth">Month</label>
+                                            <input class="filter__input filter__input--date" type="number" id="fromMonth" aria-describedby="fromDateHint" />
+                                        </div>
+                                        <div class="filter__inner-field">
+                                            <label class="filter__label filter__label--date" for="fromDay">Day</label>
+                                            <input class="filter__input filter__input--date" type="number" id="fromDay" aria-describedby="fromDateHint" />
+                                        </div>
+                                        <div class="filter__inner-field">
+                                            <label class="filter__label filter__label--date" for="fromYear">Year</label>
+                                            <input class="filter__input filter__input--date" type="number" id="fromYear" aria-describedby="fromDateHint" />
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="filter__fieldset">
+                                    <legend class="filter__legend"><span class="visually-hidden">Sort by date: </span>To Date</legend>
+                                    <span class="visually-hidden" id="toDateHint">Example: 01 30 1987</span>
+                                    <div class="filter__fieldset-content">
+                                        <div class="filter__inner-field">
+                                            <label class="filter__label filter__label--date" for="toMonth">Month</label>
+                                            <input class="filter__input filter__input--date" type="number" id="toMonth" aria-describedby="toDateHint" />
+                                        </div>
+                                        <div class="filter__inner-field">
+                                            <label class="filter__label filter__label--date" for="toDay">Day</label>
+                                            <input class="filter__input filter__input--date" type="number" id="toDay" aria-describedby="toDateHint" />
+                                        </div>
+                                        <div class="filter__inner-field">
+                                            <label class="filter__label filter__label--date" for="toYear">Year</label>
+                                            <input class="filter__input filter__input--date" type="number" id="toYear" aria-describedby="toDateHint" />
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="filter">
+                                <label class="filter__label" for="filterSearch">Search By Keyword</label>
+                                <div class="filter__search-content">
+                                    <input class="filter__input filter__input--search" type="text" id="filterSearch" placeholder="Search By Keyword" />
+                                    <button class="filter__search-button" type="submit">
+                                        <svg aria-hidden="true" focusable="false">
+                                            <use xlink:href="../images/svg-legend.svg#icon-search"></use>
+                                        </svg>
+                                        <span class="visually-hidden">Submit search</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="pagination">
+                        <div class="pagination__results">
+                            Results 1-12 of 100
+                        </div>
+
+                        <ul class="pagination__list">
+                            <li class="pagination__list-item">
+                                <a class="pagination__link" href="#" aria-label="go to previous page of results">
+                                    <svg aria-hidden="true" focusable="false">
+                                        <use xlink:href="../images/svg-legend.svg#icon-chevron-left"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="pagination__list-item"><a class="pagination__link pagination__link--active" href="#" aria-label="go to page 1 of results">1</a></li>
+                            <li class="pagination__list-item"><a class="pagination__link" href="#" aria-label="go to page 2 of results">2</a></li>
+                            <li class="pagination__list-item"><a class="pagination__link" href="#" aria-label="go to page 3 of results">3</a></li>
+                            <li class="pagination__list-item"><a class="pagination__link" href="#" aria-label="go to page 4 of results">4</a></li>
+                            <li class="pagination__list-item">
+                                <a class="pagination__link" href="#" aria-label="go to previous page of results">
+                                    <svg aria-hidden="true" focusable="false">
+                                        <use xlink:href="../images/svg-legend.svg#icon-chevron-right"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="listing-section">
+                        <h2 class="listing-header">Recent News</h2>
+                        <ul class="listing extra-pad">
+                            <li class="listing-item">
+                                <div class="li-content">
+                                    <strong class="li-meta">News</strong>
+                                    <h3 class="li-title">Alliance Legislative Report</h3>
+                                    <div class="li-desc">Compiled each week during sessions of the General Assembly and as needed during off-session times, Alliance Legislative Reports summarize major legislative activities and bills of interest...</div>
+                                    <a aria-label="Read more about Alliance Legislative Report" href="#" class="li-more">Read more</a>
+                                </div>
+                            </li>
+                            <li class="listing-item">
+                                <div class="li-img">
+                                    <img src="https://via.placeholder.com/160x120" alt="">
+                                </div>
+                                <div class="li-content">
+                                    <strong class="li-meta">News</strong>
+                                    <h3 class="li-title">The Journal (March/April)</h3>
+                                    <div class="li-desc">The March/April 2019 issue of The Illinois School Board Journal deals
+                                    with finding balance in key areas of school board member work...</div>
+                                    <a aria-label="Read more about The Journal (March/April)" href="#" class="li-more">Read more</a>
+                                </div>
+                            </li>
+                            <li class="listing-item">
+                                <div class="li-content">
+                                    <strong class="li-meta">News</strong>
+                                    <h3 class="li-title">School Safety Resources and Guidance</h3>
+                                    <div class="li-desc">Here are resources to help school leaders be proactive in improving your security measures and reassuring your community that proper safety protocols are in place.</div>
+                                    <a aria-label="Read more about School Safety Resources and Guidance" href="#" class="li-more">Read more</a>
+                                </div>
+                            </li>
+                            <li class="listing-item">
+                                <div class="li-img">
+                                    <img src="https://via.placeholder.com/500x500" alt="">
+                                </div>
+                                <div class="li-content">
+                                    <strong class="li-meta">News</strong>
+                                    <h3 class="li-title">Alliance Legislative Report</h3>
+                                    <div class="li-desc">Compiled each week during sessions of the General Assembly and as needed during off-session times, Alliance Legislative Reports summarize major legislative activities and bills of interest...</div>
+                                    <a aria-label="Read more about Alliance Legislative Report" href="#" class="li-more">Read more</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="#" class="listing-more">
+                            <span>View All News</span>
+                            <svg aria-hidden="true" focusable="false">
+                                <use xlink:href="../images/svg-legend.svg#icon-chevron-right"></use>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="listing-section">
+                        <h2 class="listing-header">Recent Events</h2>
+                        <ul class="listing">
+                            <li class="listing-item">
+                                <div class="li-date">
+                                    <div class="li-date-head">12</div>
+                                    <div class="li-date-bot">Jun 2019</div>
+                                    <div class="li-date-mb">Jun 12 2019</div>
+                                </div>
+                                <div class="li-content">
+                                    <h3 class="li-title">Lorem Ipsum Dolor Sit Amet</h3>
+                                    <div class="li-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor ipsum non eros tempus...</div>
+                                    <a aria-label="Register for Lorem Ipsum Dolor Sit Amet" href="#" class="li-more">Register</a>
+                                </div>
+                            </li>
+                            <li class="listing-item">
+                                <div class="li-date">
+                                    <div class="li-date-head">22-24</div>
+                                    <div class="li-date-bot">Jun 2019</div>
+                                    <div class="li-date-mb">Jun 22-24 2019</div>
+                                </div>
+                                <div class="li-content">
+                                    <h3 class="li-title">Lorem Ipsum Dolor Sit Amet</h3>
+                                    <div class="li-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor ipsum non eros tempus...</div>
+                                    <a aria-label="Register for Lorem Ipsum Dolor Sit Amet" href="#" class="li-more">Register</a>
+                                </div>
+                            </li>
+                            <li class="listing-item">
+                                <div class="li-date">
+                                    <div class="li-date-head">12</div>
+                                    <div class="li-date-bot">Jun 2019</div>
+                                    <div class="li-date-mb">Jun 12 2019</div>
+                                </div>
+                                <div class="li-content">
+                                    <h3 class="li-title">Lorem Ipsum Dolor Sit Amet</h3>
+                                    <div class="li-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor ipsum non eros tempus...</div>
+                                    <a aria-label="Register for Lorem Ipsum Dolor Sit Amet" href="#" class="li-more">Register</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="#" class="listing-more">
+                            <span>View All Events</span>
+                            <svg aria-hidden="true" focusable="false">
+                                <use xlink:href="../images/svg-legend.svg#icon-chevron-right"></use>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="interior-bottom">
+
+</div>
+{% endblock %}
