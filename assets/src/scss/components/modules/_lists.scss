@@ -1,0 +1,236 @@
+/* ================================================================
+   Lists
+   ================================================================ */
+
+.listing-section {
+    margin: 0 0 30px;
+    border-radius: 10px;
+}
+
+.listing-header {
+    @include x-rem(font-size, 30px);
+    font-weight: normal;
+    font-family: $font-secondary;
+    line-height: 1;
+    margin: 0 0 25px;
+    padding: 0 0 25px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.listing {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.listing-item {
+    padding: 0 0 25px;
+    margin: 0 0 25px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.li-meta {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: $font-primary;
+    @include x-rem(font-size, 14px);
+    margin: 0 0 5px;
+}
+
+.li-img {
+    margin: 0 0 20px;
+    flex: 0 0 160px;
+}
+
+.li-date {
+    margin: 0 0 10px;
+    color: #333;
+    font-weight: bold;
+    font-family: $font-secondary;
+    line-height: 1;
+}
+
+.li-date-head {
+    display: none;
+    @include x-rem(font-size, 31px);
+    margin: 0 0 10px;
+}
+
+.li-date-bot {
+    display: none;
+    @include x-rem(font-size, 12px);
+    text-transform: uppercase;
+}
+
+.li-date-mb {
+    @include x-rem(font-size, 14px);
+    text-transform: uppercase;
+}
+
+.li-content {
+    flex: 1 1 auto;
+}
+
+.li-title {
+    color: $color-primary;
+    @include x-rem(font-size, 22px);
+    font-family: $font-secondary;
+    font-weight: bold;
+    margin: 0 0 10px;
+    line-height: normal;
+}
+
+.li-extra {
+    display:flex;
+    flex-wrap: wrap;
+    margin:-10px -10px 10px;
+    @include x-rem(font-size, 14px);
+    font-style: italic;
+}
+.li-extra__item {
+    margin:0 10px;
+}
+
+.li-desc {
+    margin: 0 0 10px;
+
+    &:last-child {
+        margin:0;
+    }
+}
+
+.li-more {
+    text-decoration: underline;
+    font-weight: 500;
+    @include x-rem(font-size, 14px);
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.listing-more {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @include x-rem(font-size, 18px);
+    font-family: $font-secondary;
+    line-height: normal;
+
+    svg {
+        width: 12px;
+        height: 12px;
+        fill: currentColor;
+        margin: 0 0 1px 7px;
+    }
+}
+
+.listing-tags {
+    @include resetList;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 20px 0 0 0;
+}
+
+.listing-tags__item {
+    display: block;
+    margin: 0 5px 5px 0;
+}
+
+.listing-tags__text {
+    @include x-rem(font-size, 12px);
+    background: $color-primary;
+    color: $color-invert;
+    padding: 3px 5px;
+
+    @at-root a#{&} {
+        &:hover,
+        &:focus {
+            background: transparentize($color: $color-primary, $amount: 0.2);
+        }
+    }
+}
+
+@media (min-width: $bp-mw) {
+    .listing-intro-inner {
+        flex-direction: row;
+        font-weight: normal;
+
+        svg {
+            margin: 0 45px 0 0;
+            width: 81px;
+            height: 77px;
+        }
+
+        span {
+            max-width: 140px;
+        }
+    }
+
+    .listing-item {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .li-date {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background: #f0eeeb;
+        text-align: center;
+        width: 95px;
+        height: 95px;
+        flex: 0 0 auto;
+        margin: 0 10px 0 0;
+    }
+
+    .li-date-head {
+        display: block;
+    }
+
+    .li-date-bot {
+        display: block;
+    }
+
+    .li-date-mb {
+        display: none;
+    }
+
+    .li-img {
+        margin: 0 10px 0 0;
+    }
+
+    .li-title {
+        margin: 0 0 13px;
+    }
+
+    .li-desc {
+        margin: 0 0 15px;
+    }
+}
+
+@media (min-width: $bp-l) {
+    .listing-section-inner {
+        padding: 30px;
+    }
+
+    .listing-item {
+        padding: 0 10px 25px;
+
+        @at-root .extra-pad & {
+            padding: 0 20px 25px;
+        }
+    }
+
+    .li-date {
+        margin: 0 30px 0 0;
+    }
+
+    .li-img {
+        margin: 0 25px 0 0;
+    }
+}
