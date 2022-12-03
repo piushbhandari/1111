@@ -1,0 +1,39 @@
+//Sticky Header On Scroll Up Defaulted to mobile only
+
+.sticky-header {
+    transition: transform .4s;
+}
+
+@media (max-width: $bp-m-max) {
+    .sticky-header-mobile {
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        z-index:999;
+
+        //offset next element
+        + * {
+            padding-top:76px;
+        }
+    }
+    &.sticky-header-down .sticky-header-mobile {
+        transform: translate3d(0, -2000%, 0);
+    }
+}
+
+//Sticky at all times on larger screens
+@media (min-width: $bp-mw) {
+    .sticky-header-desktop {
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        z-index:999;
+
+        //offset next element
+        + * {
+            padding-top:120px;
+        }
+    }
+}
