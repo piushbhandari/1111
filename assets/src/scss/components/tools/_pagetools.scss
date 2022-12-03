@@ -1,0 +1,51 @@
+.page-tools {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.page-tools-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include resetBtn;
+	color: $color-base;
+	cursor: pointer;
+	margin: 0 10px 0 0;
+
+	&#js-print { display: none;	}
+
+	svg {
+		display: block;
+		margin: 0 5px 0 0;
+		width: 13px;
+		height: 13px;
+		fill: #5f6062;
+		transition: $trans;
+	}
+
+	&:last-child {
+		margin: 0;
+	}
+
+	&:hover,
+	&:focus {
+		color: $color-primary;
+
+		span {
+			text-decoration: underline;
+		}
+	}
+}
+
+@media (min-width: $bp-mw) {
+	.page-tools-item {
+		&#js-print { display: flex;	}
+
+		svg {
+			width: 16px;
+			height: 16px;
+			margin: 0 6px 0 0;
+		}
+	}
+}
