@@ -1,0 +1,106 @@
+/* ******************************************************
+   Main Import File
+        - Variables / Utilities / Globals
+        - Components (Navigation/Tools/Modules)
+        - Vendor Imports (Third party plugins)
+        - Overwrite Imports (Print/admin)
+   ****************************************************** */
+
+
+/* ================================================================
+   Variables / Utilities / Globals
+   ================================================================ */
+
+// Variables
+@import "variables";
+
+// SASS Functions and Modules
+@import "utilities";
+
+// Normalize
+@import "globals/normalize";
+
+// Base Styles
+@import "globals/boilerplate";
+@import "globals/grid";
+
+// Global Element Styles
+@import "globals/typography";
+@import "globals/buttons";
+@import "globals/data-expander";
+@import "globals/tables";
+@import "globals/forms";
+
+// Layout Styles
+@import "globals/layout/base";
+@import "globals/layout/header";
+@import "globals/layout/header-sticky";
+@import "globals/layout/interior";
+@import "globals/layout/footer";
+
+
+
+// Special
+@import "globals/animations";
+
+/* ================================================================
+   Component Imports - Comment/uncomment what you don't need/need.
+   ================================================================ */
+
+// Component Globals
+@import "components/components";
+
+// Navigation
+@import "components/navigation/main-navigation";
+@import "components/navigation/rail-navigation";
+@import "components/navigation/hamburger";
+@import "components/navigation/footerNav";
+@import "components/navigation/sectionNav";
+@import "components/navigation/breadcrumbs";
+
+// Tools
+@import "components/tools/tabs";
+@import "components/tools/pagination";
+@import "components/tools/pagetools";
+@import "components/tools/search";
+
+// Modules
+@import "components/modules/banner";
+@import "components/modules/events";
+@import "components/modules/news";
+@import "components/modules/videos";
+@import "components/modules/alerts";
+@import "components/modules/cookie-consent";
+@import "components/modules/lists";
+@import "components/modules/filters";
+@import "components/modules/hero";
+@import "components/modules/page-banner";
+@import "components/modules/cards";
+@import "components/modules/side-by-side";
+@import "components/modules/image-slider";
+
+
+/* ================================================================
+   Vendor Imports
+   ================================================================ */
+
+@import "vendor/a11y-slider";
+@import "vendor/modaal";
+@import "vendor/focus-overlay";
+@import "vendor/froala";
+
+
+/* ================================================================
+   Pages
+   ================================================================ */
+
+// Admin styles, resets and fixes
+@import "pages/styleguide";
+
+
+/* ================================================================
+   Overwrite Imports
+   ================================================================ */
+
+// Print
+@import "globals/print";
