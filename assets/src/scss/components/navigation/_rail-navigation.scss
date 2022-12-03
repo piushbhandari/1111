@@ -1,0 +1,88 @@
+/*================================================================
+        RAIL NAVIGATION STYLES
+================================================================*/
+
+.rail-navigation {
+    padding:20px;
+    margin:0 0 20px;
+    background:#eee;
+
+    // Defaults
+    ul {
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+
+    li {
+        
+    }
+
+    a {
+        display:block;
+        padding:10px;
+        color: $color-base;
+        border-bottom:1px solid #aaa;
+
+        &:hover,
+        &:focus {
+            background: none;
+            text-decoration: underline;
+            color: currentColor;
+        }
+
+        &[data-expander-toggle] {
+            position: relative;
+
+            // Arrows
+            &:after {
+                content:'';
+                position: absolute;
+                border-width: 7px 6px 0px 6px;
+                border-style: solid;
+                border-color: $color-primary transparent transparent transparent;
+                right:15px;
+                top:50%;
+                transform: translateY(-50%);
+            }
+
+            &.active {
+                &:after {
+                    border-width: 0 6px 7px 6px;
+                    border-color: transparent transparent $color-primary  transparent;
+                }
+            }
+        }
+    }
+
+    // 1st level
+    > ul {
+
+        a {
+            color: $color-primary;
+        }
+
+        // 2nd level
+        ul {
+            background:#ddd;
+
+            a {
+                color: $color-secondary;
+            }
+
+            // 3rd level
+            ul {
+                background:#ccc;
+
+                a {
+                    color: $color-base;
+                }
+            }
+        }
+    }
+
+    // Tablet/Desktop Styles
+    @media (min-width: $bp-mw) {
+
+    }
+}
