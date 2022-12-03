@@ -1,0 +1,153 @@
+/* ================================================================
+   Hero Slider and Static
+   ================================================================ */
+
+.hero-slider-container {
+    position: relative;
+    margin: 0 0 30px;
+}
+
+.hero-slider {
+    @include resetList;
+    display: flex;
+    align-items: flex-start;
+    transition: $trans;
+    overflow-y: hidden;
+}
+
+.hero-slide {
+    width: 100%;
+    flex: 1 0 auto;
+    background: no-repeat center / cover;
+}
+
+.hero-slide__img {
+    padding-top: percentage(9/16);
+    background: no-repeat center / cover;
+}
+
+.hero-slide__container {
+    max-width: $container-size;
+    padding: 30px $grid-gutter-em;
+    margin: 0 auto;
+    background: $color-primary;
+    color: $color-invert;
+
+    *::selection { background:$color-secondary; }
+}
+
+.hero-slide-info-box__title {
+    @include fluid-type($bp-s, $bp-mw, 30px, 50px);
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.hero-slide-info-box__subtitle {
+    @include fluid-type($bp-s, $bp-mw, 16px, 20px);
+    font-weight: 300;
+    margin: 0 0 10px;
+    line-height: 1.6;
+}
+
+.hero-slide-info-box__btn {
+    display: block;
+    background: $color-invert;
+    color: $color-primary;
+    border: 1px solid currentColor;
+    padding: 18px 35px;
+    font-weight: bold;
+    @include x-rem(font-size, 16px);
+
+    &:hover,
+    &:focus {
+        background: $color-primary;
+        color: $color-invert;
+    }
+}
+
+.hero-slide-controls {
+    position: absolute;
+    padding-top: percentage(9/16);
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.hero-slider-btn {
+    @extend %carousel-btn;
+
+    &--prev { left: 0; }
+    &--next { right: 0; }
+}
+
+@media (min-width: $bp-mw) {
+    .hero-slider-container {
+        margin: 0 0 65px;
+    }
+
+    .hero-slide {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .hero-slide__img {
+        display: none;
+    }
+
+    .hero-slide__container {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        min-height: 475px;
+        background: none;
+        flex: 1 0 auto;
+        padding: 0 $grid-gutter-em;
+        width: 100%;
+    }
+
+    .hero-slide__inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: $color-primary;
+        padding: 20px 100px;
+        max-width: 600px;
+    }
+
+    .hero-slide-info-box__title {
+        margin: 0 0 20px;
+    }
+
+    .hero-slide-info-box__subtitle {
+        margin: 0 0 30px;
+    }
+
+    .hero-slide-info-box__btn {
+        display: inline-block;
+    }
+
+    .hero-slide__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1200px;
+        height: 100%;
+        z-index: 1;
+        background: no-repeat top right / cover;
+
+        &::before {
+            content: none;
+        }
+
+        &::after {
+            background-size: auto;
+            background-position: bottom right;
+        }
+    }
+
+    .hero-slide-controls {
+        position: static;
+        padding-top: 0;
+    }
+}
