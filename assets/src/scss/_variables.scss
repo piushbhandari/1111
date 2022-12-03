@@ -1,0 +1,57 @@
+/* ================================================================
+   Variables
+   ================================================================ */
+
+// Color Variables
+$body-bg: #fff;
+$menu-bg: rgb(242, 242, 242);
+$card-bg: #ebe0dc;
+$color-base: #000;
+$color-invert: #fff;
+$color-primary: #225894;
+$color-secondary: #25afd2;
+$color-blackpink: rgb(215, 140, 152);
+$color-red: red;
+$color-white: white;
+$color-black: black;
+$text-black: #242222;
+// button bg
+$blue-btn-bg: #2a4a7f;
+$orange-btn-bg: #f4511e;
+
+// Typography
+$font-primary: Arial, sans-serif;
+$font-secondary: Tahoma, Geneva, sans-serif;
+$font-heading: $font-secondary;
+
+$fontWeight-light: 300;
+$fontWeight-normal: 400;
+$fontWeight-medium: 500;
+$fontWeight-semibold: 600;
+$fontWeight-bold: 700;
+
+$typography-margin-bottom: 1em;
+
+// Breakpoints
+// You can convert these at http://pxtoem.com
+$bp-s: 20em; // 320px
+$bp-s-max: 29.938em; // 479px
+$bp-sw: 30em; // 480px
+$bp-sw-max: 47.938em; // 767px
+$bp-m: 48em; // 768px
+$bp-m-max: 59.938em; // 959px
+$bp-mw: 60em; // 960px
+$bp-mw-max: 71.188em; // 1139px
+$bp-l: 71.25em; // 1140px
+$bp-l-max: 81.188em; // 1299px
+$bp-xl: 81.25em; // 1300px
+
+// Transitions
+$trans-duration: 0.18s;
+$trans-ease: ease-in-out;
+$trans: all $trans-duration $trans-ease;
+
+// Grid
+$container-size: 89.375rem; // 1430px
+$grid-gutter: 15px;
+$grid-gutter-em: 0.938em; // Changing grid gutter to em causes a compiling error :/
