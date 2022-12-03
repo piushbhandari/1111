@@ -1,0 +1,337 @@
+/*================================================================
+            MAIN NAVIGATION STYLES
+================================================================*/
+
+.main-navigation {
+  position: relative;
+
+  //Nav Defaults
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+  }
+  a,
+  button {
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
+    background: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background: $color-secondary;
+    }
+
+    &[data-expander-toggle] {
+      position: relative;
+
+      // Arrows
+      &:after {
+        content: "";
+        position: absolute;
+        border-width: 7px 6px 0px 6px;
+        border-style: solid;
+        border-color: #ffffff transparent transparent transparent;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &.active {
+        &:after {
+          border-width: 0 6px 7px 6px;
+          border-color: transparent transparent #ffffff transparent;
+        }
+      }
+    }
+  }
+
+  .main-navigation__heading {
+    font-weight: bold;
+
+    @include breakpoint(62.5em) {
+      margin-bottom: 1.125rem;
+    }
+  }
+
+  // 1st Level
+  // ********************************************* //
+  > ul,
+  .main-navigation-mega {
+  
+    gap: 2.5rem;
+  }
+  .main-navigation-mega > ul {
+    background: #333333;
+    gap: 2.5rem;
+
+    > li {
+      > a,
+      > button {
+        &:hover,
+        &:focus {
+        }
+      }
+
+      // 2nd Level
+      // ********************************************* //
+      > ul {
+        background: #777777;
+        gap: 2.5rem;
+
+        > li {
+          > a,
+          > button {
+            &:hover,
+            &:focus {
+            }
+          }
+
+          // 3rd Level
+          // ********************************************* //
+
+          > ul {
+            background: #555555;
+
+            > li {
+              > a,
+              > button {
+                &:hover,
+                &:focus {
+                  text-decoration: none;
+                  background: $color-secondary;
+                }
+              }
+
+              // 4th Level
+              // ********************************************* //
+
+              > ul {
+                background: #333333;
+
+                > li {
+                  > a,
+                  > button {
+                    &:hover,
+                    &:focus {
+                      text-decoration: none;
+                      background: $color-secondary;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $bp-mw) {
+    //Nav Defaults
+
+    ul {
+    }
+    li {
+    }
+    a,
+    button {
+      &:hover,
+      &:focus {
+      }
+    }
+
+    // 1st Level
+    // ********************************************* //
+    > ul {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      background: none;
+
+      > li {
+        flex: 1;
+        position: relative;
+
+        &[data-type="mega"] {
+          position: static;
+        }
+
+        > a,
+        > button {
+          text-align: center;
+          background: none;
+          color: #333333;
+
+          &:hover,
+          &:focus {
+          }
+
+          &[data-expander-toggle] {
+            position: relative;
+
+            // Arrows
+            &:after {
+              border-color: #333 transparent transparent transparent;
+            }
+
+            &.active {
+              &:after {
+                border-color: transparent transparent #333 transparent;
+              }
+            }
+          }
+        }
+
+        // 2nd Level
+        // ********************************************* //
+        > ul {
+          position: absolute;
+          width: 100%;
+          top: 100%;
+          background: #777777;
+
+          > li {
+            > a,
+            > button {
+              &:hover,
+              &:focus {
+              }
+            }
+
+            // 3rd Level
+            // ********************************************* //
+
+            > ul {
+              background: #555555;
+
+              > li {
+                > a,
+                > button {
+                  &:hover,
+                  &:focus {
+                    text-decoration: none;
+                    background: $color-secondary;
+                  }
+                }
+
+                // 4th Level
+                // ********************************************* //
+
+                > ul {
+                  background: #333333;
+
+                  > li {
+                    > a,
+                    > button {
+                      &:hover,
+                      &:focus {
+                        text-decoration: none;
+                        background: $color-secondary;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      // Mega
+      // ********************************************* //
+      [data-nav-type="mega"] {
+        position: static;
+        .main-navigation-mega {
+          padding: 20px;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: $menu-bg;
+
+          ul {
+            display: block;
+            animation: none;
+            background: none;
+          }
+
+          > ul {
+            display: flex;
+
+            // Mega 1st Level
+            // ********************************************* //
+            > li {
+              flex: 1;
+              @include breakpoint(62.5em) {
+                &:not(:last-child) {
+                  border-right: 1px solid #b2a7a4;
+                }
+                align-self: stretch;
+              }
+              > a,
+              > button {
+                background: red;
+
+                &:hover,
+                &:focus {
+                }
+              }
+
+              // Mega 2nd Level
+              // ********************************************* //
+              > ul {
+                > li {
+                  > a,
+                  > button {
+                    color: $color-black;
+                    background: none;
+                    @include breakpoint(62.5em) {
+                      text-align: left;
+                      padding-left: 0;
+                    }
+
+                    &:hover,
+                    &:focus {
+                    }
+                  }
+
+                  // Mega 3rd Level
+                  // ********************************************* //
+                  > ul {
+                    > li {
+                      > a,
+                      > button {
+                        background: green;
+
+                        &:hover,
+                        &:focus {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1000px) {
+  .main-navigation__mega-link {
+    text-align: left;
+  }
+}
+.main-navigation__more-info {
+  display: none;;
+}
