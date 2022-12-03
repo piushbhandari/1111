@@ -1,0 +1,38 @@
+.interior-top {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 0 15px;
+}
+
+.interior-content,
+.interior-rail {
+    padding: 20px 0;
+}
+
+.page-extra-container {
+    display: none;
+}
+
+.page-extra-col {
+    text-align: center;
+    @include x-rem(font-size, 11px);
+}
+
+@media (min-width: $bp-mw) {
+    .interior-content,
+    .interior-rail {
+        padding: 50px 0;
+    }
+
+    .page-extra-container {
+        display: block;
+    }
+
+    .page-extra-col {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        @include x-rem(font-size, 16px);
+    }
+}
