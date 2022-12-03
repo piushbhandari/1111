@@ -1,0 +1,15 @@
+/* ================================================================
+   Cookie Consent
+   ================================================================ */
+
+.cookie-consent {
+    background:$color-primary;
+    padding:20px 0;
+}
+.cookie-consent__desc {
+    color:$color-invert;
+    margin:0 0 1rem;
+}
+.cookie-consent__submit {
+    @extend .button-2;
+}
