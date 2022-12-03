@@ -1,0 +1,52 @@
+.page-banner {
+    position: relative;
+    line-height: 1.2;
+    color: $color-invert;
+    text-transform: uppercase;
+    background: no-repeat center center / cover;
+    margin: 0 0 15px;
+
+    [class*="col"] {
+        position: relative;
+        display: flex; // Adding flex to parent to fix IE min-height bug
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparentize($color: $color-primary, $amount: 0.3);
+    }
+}
+
+.page-banner-inner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 200px;
+    flex: 1 0 auto;
+    width: 100%; // IE Fix to wrap text
+}
+
+.page-banner-heading {
+    position: relative;
+    @include x-rem(font-size, 28px);
+    font-weight: bold;
+    background: rgba(0,0,0,0.7);
+    padding: 10px;
+    margin: 0;
+}
+
+@media (min-width: $bp-mw) {
+    .page-banner-inner {
+        min-height: 275px;
+    }
+
+    .page-banner-heading {
+        @include x-rem(font-size, 60px);
+        padding: 10px 20px;
+    }
+}
