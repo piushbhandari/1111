@@ -1,0 +1,37 @@
+/* ================================================================
+   Alerts
+   ================================================================ */
+
+.site-alert-container {
+	background: rgba($color-blackpink, .5);
+	padding:15px 0;
+}
+.site-alert {
+	display:flex;
+	align-items: center;
+
+	+ .site-alert {
+		margin:20px 0 0 0;
+	}
+}
+.site-alert__image {
+	max-width:84px;
+	padding:0 20px 0 0;
+}
+.site-alert__description {
+	width:100%;
+	color:$color-invert;
+	@include x-rem(font-size, 18px);
+	margin:0;
+
+	a {
+		text-decoration: underline;
+		color:$color-invert;
+		font-weight:bold;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+}
