@@ -1,0 +1,138 @@
+/* ================================================================
+   Filters
+   ================================================================ */
+
+.filters {
+    margin:0 0 1rem;
+    padding:15px;
+    background:#eee;
+}
+
+.filter {
+    margin:0 0 15px;
+
+    .button {
+        width:100%;
+        white-space: nowrap;
+    }
+
+    &:last-child {
+        margin:0;
+    }
+}
+
+.filter__label {
+    display:block;
+    margin:0 0 3px;
+    white-space: nowrap;
+}
+.filter__label--date {
+    font-size:.875em;
+    padding:0 5px 0 0;
+}
+
+.filter__select {
+    width:100%;
+}
+
+.filter__input {
+    width:100%;
+}
+.filter__input--date {
+    width:70px;
+}
+
+.filter__fieldset {
+    margin:0 0 15px;
+}
+
+.filter__legend {
+    display:block;
+    margin:0 0 3px;
+    width:100%;
+}
+
+.filter__fieldset-content {
+    display:flex;
+}
+
+.filter__inner-field {
+    padding:0 10px 0 0;
+}
+
+.filter__search-content {
+    position:relative;
+}
+
+.filter__search-button {
+    position:absolute;
+    background:none;
+    border:0;
+    padding:0;
+    width:20px;
+    height:20px;
+    top:50%;
+    right:10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $color-primary;
+
+    &:hover,
+    &:focus {
+        color: $color-secondary;
+    }
+
+    svg {
+        fill: currentColor;
+        width:100%;
+        height:100%;
+        transition: $trans;
+    }
+}
+
+.filter--nolabel {
+    &::before {
+        @extend .filter__label;
+        content: '\a0'; // non breaking space
+    }
+}
+
+@media (min-width: $bp-l) {
+    .filters {
+        display:flex;
+        padding:15px 5px;
+        justify-content: space-between;
+    }
+
+    .filters--stacked {
+        display: block;
+
+        .filter {
+            margin-bottom: 10px;
+        }
+    }
+
+    .filter {
+        padding:0 10px;
+        width:100%;
+        margin:0;
+    }
+
+    .filter--date {
+        display:flex;
+    }
+
+    .filter__fieldset {
+        margin:0;
+    }
+
+    .filter__fieldset-content {
+        justify-content: space-between;
+    }
+
+    .filter__inner-field {
+        display:flex;
+        align-items:center;
+        padding:0 10px 0 0;
+    }
+}
