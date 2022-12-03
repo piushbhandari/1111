@@ -1,0 +1,107 @@
+.card-listing {
+  @include resetList;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: #333f48;
+  margin: 0 -10px 30px;
+}
+
+.card-item {
+  width: 50%;
+  @include x-rem(font-size, 14px);
+  padding: 0 10px;
+  margin: 0 0 20px;
+  line-height: 1.4;
+
+  // Last 2 items
+  &:nth-last-child(-n + 2) {
+    margin: 0;
+  }
+}
+
+.card-item__inner {
+  display: block;
+
+  @at-root a#{&} {
+    color: currentColor;
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+      text-decoration: none;
+    }
+  }
+}
+
+.card-item__img {
+  @include lazy-fade-in();
+  background: no-repeat center / cover;
+  position: relative;
+  margin: 0 0 15px;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-top: percentage(105/180);
+  }
+}
+
+.card-item__title {
+  font-weight: $fontWeight-semibold;
+  background-image: linear-gradient(
+    transparent calc(100% - 1px),
+    currentColor 1px
+  );
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: $trans;
+  margin: 0;
+}
+
+.card-item__meta {
+  display: block;
+  color: #737373;
+  margin: 3px 0 0;
+}
+
+@media (min-width: $bp-mw) {
+  .card-listing {
+    flex-wrap: none;
+    margin: 0 0 70px;
+  }
+
+  .card-item {
+    flex: 1 0 0px;
+    width: auto;
+    margin: 0 40px 0 0;
+    padding: 0;
+
+    // overwrite mobile style
+    &:nth-last-child(-n + 2) {
+      margin: 0 40px 0 0;
+    }
+  }
+
+  .card-item__title {
+    @include x-rem(font-size, 16px);
+  }
+}
+
+// temp classes
+
+.row {
+  max-width: 81.25rem;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+.card {
+  border-radius: 2.5rem;
+  background: $card-bg;
+  padding: 1.75rem 2.5rem;
+//   min-height: 16.375rem;
+height: 100%;
+}
+.col-md-4{
+    min-height: 16.375rem;
+}
