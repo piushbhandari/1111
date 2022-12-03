@@ -1,0 +1,188 @@
+{% extends "partials/layout.html" %}
+
+{% set pagetitle = "Home" %}
+{% block pagetitle %} {{ pagetitle }} {% endblock %}
+
+{% block content %}
+<div class="title color-primary">Hero Slider</div>
+<section class="hero-slider-container" id="maincontent" tabindex="-1" aria-label="Hero Slider">
+    <div class="hero-slide-controls">
+        <button type="button" class="hero-slider-btn hero-slider-btn--next">
+            <svg class="hero-slider-btn__icon" aria-hidden="true" focusable="false">
+                <use xlink:href="../images/svg-legend.svg#icon-chevron-right"></use>
+            </svg>
+            <span class="sr-only">Next slide</span>
+        </button>
+        <button type="button" class="hero-slider-btn hero-slider-btn--prev">
+            <svg class="hero-slider-btn__icon" aria-hidden="true" focusable="false">
+                <use xlink:href="../images/svg-legend.svg#icon-chevron-left"></use>
+            </svg>
+            <span class="sr-only">Previous slide</span>
+        </button>
+    </div>
+    <ul class="hero-slider">
+        {% for slide in slides %}
+            <li class="hero-slide" style="background-image: url('https://via.placeholder.com/1920x500');">
+                <div class="hero-slide__img" style="background-image: url('https://via.placeholder.com/1920x500');"></div>
+                <div class="hero-slide__container">
+                    <div class="hero-slide__inner">
+                        <div class="hero-slide-info-box">
+                            <h2 class="hero-slide-info-box__title">{{ slide.title }}</h2>
+                            {% if slide.subtitle %}
+                                <h3 class="hero-slide-info-box__subtitle">{{ slide.subtitle }}</h3>
+                            {% endif %}
+                            <a href="#" class="hero-slide-info-box__btn btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <h1>hi</h1>
+</section>
+<div class="title color-primary">Hero Static</div>
+<div class="hero-slide" style="background-image: url('https://via.placeholder.com/1920x500');">
+    <div class="hero-slide__img" style="background-image: url('https://via.placeholder.com/1920x500');"></div>
+    <div class="hero-slide__container">
+        <div class="hero-slide__inner">
+            <div class="hero-slide-info-box">
+                <h2 class="hero-slide-info-box__title">{{ slides[0].title }}</h2>
+                {% if slides[0].subtitle %}
+                    <h3 class="hero-slide-info-box__subtitle">{{ slides[0].subtitle }}</h3>
+                {% endif %}
+                <a href="#" class="hero-slide-info-box__btn btn">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="title color-primary">Cards</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="card-listing">
+                {% for i in range(0, 4) %}
+                    <li class="card-item">
+                        <a href="#" class="card-item__inner">
+                            <div class="card-item__img b-lazy" data-src="https://via.placeholder.com/500?text=Image {{i}}"></div>
+                            <div class="card-item__content">
+                                <div class="card-item__title">Card Title Goes Here</div>
+                                <div class="card-item__meta">Card bottom text</div>
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="title color-primary">Side by Side Content</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="side-by-side side-by-side--flipped">
+                <div class="side-by-side__img b-lazy" data-src="https://via.placeholder.com/435x290"></div>
+                <div class="side-by-side__box">
+                    <div class="side-by-side__content">
+                        <h2>Lorem Ipsum Dolor Sit</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies justo at gravida sodales. Nulla auctor mauris in tincidunt volutpat. Aenean lacinia vel dolor ac rhoncus. Pellentesque maximus, arcu ac egestas blandit, magna metus scelerisque risus, non dictum metus nisi et mauris. Aenean semper posuere arcu, ac fringilla dui vestibulum sed. Vivamus ultricies tortor id purus lacinia interdum.</p>
+                        <a href="#" class="btn">Lorem Ipsum Dolor</a>
+                    </div>
+                </div>
+            </div>
+            <div class="side-by-side">
+                <div class="side-by-side__img b-lazy" data-src="https://via.placeholder.com/435x290"></div>
+                <div class="side-by-side__box">
+                    <div class="side-by-side__content">
+                        <h2>Aenean Lacinia Vel Dolor</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies justo at gravida sodales. Nulla auctor mauris in tincidunt volutpat. Aenean lacinia vel dolor ac rhoncus. Pellentesque maximus, arcu ac egestas blandit, magna metus scelerisque risus, non dictum metus nisi et mauris. Aenean semper posuere arcu, ac fringilla dui vestibulum sed. Vivamus ultricies tortor id purus lacinia interdum.</p>
+                        <div class="side-by-side__links">
+                            <a href="#" class="btn">Lorem Ipsum Dolor</a>
+                            <a href="#" class="btn">Lorem Ipsum Dolor</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="side-by-side side-by-side--flipped">
+                <div class="side-by-side__img b-lazy" data-src="https://via.placeholder.com/435x290"></div>
+                <div class="side-by-side__box">
+                    <div class="side-by-side__content">
+                        <h2>Vivamus Ultricies Tortor</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies justo at gravida sodales. Nulla auctor mauris in tincidunt volutpat. Aenean lacinia vel dolor ac rhoncus. Pellentesque maximus, arcu ac egestas blandit, magna metus scelerisque risus, non dictum metus nisi et mauris. Aenean semper posuere arcu, ac fringilla dui vestibulum sed. Vivamus ultricies tortor id purus lacinia interdum.</p>
+                        <a href="#" class="btn">Lorem Ipsum Dolor</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="title color-primary">Image Slider (for sponsors, clients, etc)</div>
+<div class="slider-section">
+    <button class="slider-btn slider-btn--prev">
+        <svg aria-hidden="true" focusable="false">
+            <use xlink:href="../images/svg-legend.svg#icon-chevron-left"></use>
+        </svg>
+        <span class="sr-only">Previous slide</span>
+    </button>
+    <button class="slider-btn slider-btn--next">
+        <svg aria-hidden="true" focusable="false">
+            <use xlink:href="../images/svg-legend.svg#icon-chevron-right"></use>
+        </svg>
+        <span class="sr-only">Next slide</span>
+    </button>
+    <ul class="slider">
+        {% for i in range(0, 3) %}
+        <li class="slider__item">
+            <a class="slider__part" href="#">
+                <img class="slider__img b-lazy" data-src="https://via.placeholder.com/135x48" alt="">
+            </a>
+        </li>
+        <li class="slider__item">
+            <a class="slider__part" href="#">
+                <img class="slider__img b-lazy" data-src="https://via.placeholder.com/200x66" alt="">
+            </a>
+        </li>
+        <li class="slider__item">
+            <a class="slider__part" href="#">
+                <img class="slider__img b-lazy" data-src="https://via.placeholder.com/210x75" alt="">
+            </a>
+        </li>
+        <li class="slider__item">
+            <a class="slider__part" href="#">
+                <img class="slider__img b-lazy" data-src="https://via.placeholder.com/500x450" alt="">
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="title color-primary">Content</div>
+<section class="container home-content" aria-label="Content">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Hello world</h1>
+            <p>
+                <img class="b-lazy" data-src="https://via.placeholder.com/100" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Placeholder">
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur adipisci dolores consectetur mollitia vero necessitatibus commodi exercitationem cumque in autem repellendus, maiores beatae rerum corporis optio enim accusantium temporibus magnam.</p>
+            <p>Eius rem, earum magni architecto voluptate amet veniam delectus eos consequuntur laboriosam similique ipsum quam cum est perspiciatis accusamus optio, illum sunt velit officiis? Commodi odio voluptatibus tenetur laudantium recusandae?</p>
+            <p>Voluptas veniam error, ipsam aliquam eveniet iusto quos animi neque, vitae quidem quasi commodi magnam officia earum sit quibusdam eligendi, est distinctio dolorem. Aut officiis, cum expedita nisi laborum saepe!</p>
+            <p>Iusto temporibus labore nobis. Necessitatibus nemo adipisci aut quaerat tempore exercitationem alias dolorum veritatis laborum debitis, cumque, commodi amet! Quasi dolores inventore officiis itaque beatae dignissimos porro et excepturi reiciendis.</p>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
+
+{% set slides = [
+    {
+        title: 'Kentico Accelerator',
+        subtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, ducimus?'
+    },
+    {
+        title: 'Hello World'
+    },
+    {
+        title: 'Really Long Heading Text Goes Here',
+        subtitle: 'Ridiculously long lorem ipsum dolor sit amet consectetur adipisicing elit. Autem minus eius aliquid rem, unde deleniti atque inventore beatae nihil temporibus numquam, est facilis, error eligendi? Eum exercitationem dolorem voluptatibus saepe rerum, non assumenda eligendi. Tempora odit quibusdam qui, non quas commodi quidem voluptatem vero aperiam, suscipit, animi eaque illo porro deleniti quos nam. Cumque vero laboriosam sint! Impedit molestias eligendi quo rem ipsa autem officiis laborum, suscipit dicta. Nostrum velit omnis tempora, unde debitis fugit vitae esse sit minima voluptatem quos hic rem sapiente cupiditate asperiores. At rerum obcaecati necessitatibus. Similique voluptatum officiis provident, ipsum repellendus optio enim quo. Eum!'
+    }
+] %}
