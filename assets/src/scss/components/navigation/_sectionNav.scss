@@ -1,0 +1,38 @@
+/* ******************************************************
+   NAVIGATION
+        - Section (Rail) Navigation
+   ****************************************************** */
+
+.section-nav{
+    .cm-menu{
+        //Nav styles
+        &  > li{background:$color-primary;}
+    
+
+        //first tier list
+        & > li > a{
+            background:none;
+            color:$color-invert;
+
+            &:hover, &:focus{
+             text-decoration: underline;
+            }
+            }
+
+        //2nd tier list
+
+        & > li > ul > li  a {
+            background:$color-invert; 
+            color:$color-primary; 
+            padding: 10px 10px 10px 20px;
+            
+            &:hover, &:focus{
+                color:$color-invert; //change this value
+                background:$color-primary;
+            }
+        }
+
+    }
+}
+
+
