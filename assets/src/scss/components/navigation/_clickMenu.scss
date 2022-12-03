@@ -1,0 +1,737 @@
+/*================================================================
+                 CLICK MENU STYLES v0.9.9
+================================================================*/
+
+/*
+    THESE STYLES will probably not be needed and are adjusted in your main styles
+    - * for example is most efficient when not a child of a class
+       -- hopefully you already are using the box sizing globally
+    - you may not need text-decoration etc. depending on your global anchors
+*/
+.cm-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+.cm-menu *,
+.cm-menu *:after,
+.cm-menu *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cm-menu:focus {
+  outline: 3px solid blue;
+}
+.cm-menu,
+.cm-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #222;
+}
+
+.toggle-menu + .cm-menu,
+.cm-menu ul {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  -wekbit-transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.cm-menu {
+  position: relative;
+}
+.cm-menu li a {
+  display: block;
+  padding: 10px;
+  position: relative;
+  background: #999;
+}
+
+.cm-menu li {
+  border-top: 1px solid #ccc;
+}
+.cm-menu li:first-child {
+  border-top: 0;
+}
+.cm-menu li {
+  position: relative;
+}
+
+.cm-menu .has-sub:after,
+.cm-menu .expander-wrap .has-sub > span:after {
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin: 2px 0 0 5px;
+  vertical-align: middle;
+  border: 5px solid transparent;
+  /* Extra is for anti-aliasing issues in firefox and others */
+  border: 5px solid rgba(0, 0, 0, 0);
+  border-top-color: #fff;
+  -wekbit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform: scale(0.98) translateY(-50%);
+  -ms-transform: scale(0.98) translateY(-50%);
+  transform: scale(0.98) translateY(-50%);
+}
+
+.cm-menu .opened > .has-sub:after,
+.cm-menu .opened > .expander-wrap .has-sub > span:after {
+  border-top-color: #333;
+  -webkit-transform: scale(0.98) translateY(-75%) rotate(-180deg);
+  -ms-transform: scale(0.98) translateY(-75%) rotate(-180deg);
+  transform: scale(0.98) translateY(-75%) rotate(-180deg);
+}
+
+.cm-menu > .opened > a,
+.cm-menu > li > a:hover,
+.cm-menu > li > a:focus,
+.cm-menu > li > div > a:hover,
+.cm-menu > li > div > a:focus {
+  color: #333;
+  background: #d4d4d4;
+}
+
+.cm-menu .expander-wrap .has-sub:hover > span,
+.cm-menu .expander-wrap .has-sub:focus > span {
+  color: #333;
+  background: #d4d4d4;
+}
+
+// .cm-menu ul .opened > a,
+// .cm-menu ul a:hover, .cm-menu ul li a:focus { background:#444; }
+
+.cm-menu ul .opened > .has-sub:after,
+.cm-menu ul .opened > .expander-wrap .has-sub > span:after {
+  border-top-color: #fff;
+}
+
+.cm-js-active .cm-menu {
+  max-height: 80em;
+  opacity: 1;
+}
+.cm-menu .opened > ul {
+  max-height: 80em;
+  opacity: 1;
+}
+
+/* ================= SEPARATE EXPANDERS OPTION IS ENABLED ================= */
+
+.cm-menu .expander-wrap {
+  display: table;
+  width: 100%;
+}
+.cm-menu .expander-wrap a {
+  display: table-cell;
+}
+.cm-menu .expander-wrap .has-sub {
+  position: relative;
+  width: 30px;
+}
+.cm-menu .expander-wrap .has-sub:after {
+  display: none;
+}
+.cm-menu .expander-wrap .has-sub > span {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #aaa;
+}
+.cm-menu .expander-wrap .has-sub > span:after {
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  margin: 2px 0 0 5px;
+  vertical-align: middle;
+  border: 5px solid transparent;
+  /* Extra is for anti-aliasing issues in firefox and others */
+  border: 5px solid rgba(0, 0, 0, 0);
+  border-top-color: #fff;
+  -wekbit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform: scale(0.98) translate(50%, -50%);
+  -ms-transform: scale(0.98) translate(50%, -50%);
+  transform: scale(0.98) translate(50%, -50%);
+}
+.cm-menu .opened > .expander-wrap .has-sub > span:after {
+  border-top-color: #333;
+  -webkit-transform: scale(0.98) translate(50%, -75%) rotate(-180deg);
+  -ms-transform: scale(0.98) translate(50%, -75%) rotate(-180deg);
+  transform: scale(0.98) translate(50%, -75%) rotate(-180deg);
+}
+
+/* ================= HOVER FALLBACK IF JAVASCRIPT IS DISABLED ================= */
+
+.no-js .toggle-menu + .cm-menu {
+  opacity: 1;
+  max-height: 80em;
+}
+.no-js .cm-menu > li:hover > a {
+  background: #333;
+}
+.no-js .cm-menu ul ul li:hover > a {
+  background: #444;
+}
+
+.no-js .cm-menu li:hover > ul {
+  display: block;
+  max-height: 80em;
+  opacity: 1;
+  width: 100%;
+}
+.no-js .cm-menu ul {
+  display: none;
+  overflow: visible;
+}
+
+/* ================= MENU OPEN FUNCTIONALITY ADDED ON SETUP ================= */
+
+@media (min-width: $bp-mw) {
+  .toggle-menu + .cm-menu {
+    max-height: 80em;
+    opacity: 1;
+    overflow: visible;
+  }
+  .cm-menu ul {
+    top: 100%;
+    overflow: hidden;
+  }
+  .cm-menu .opened > ul {
+    max-height: 80em;
+    opacity: 1;
+  }
+
+  .cm-menu .animated > ul {
+    overflow: visible;
+    z-index: 10;
+  }
+  .cm-menu .animating > ul {
+    z-index: -1;
+  }
+}
+
+/*================================================================
+                 CLICK MENU MENU TYPES
+================================================================*/
+
+/*  NAV BAR STYLE TYPE
+    ================================================================*/
+
+@media (min-width: $bp-mw) {
+  .nav-bar li {
+    border-top: 0;
+  }
+
+  .nav-bar > ul {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .nav-bar > ul > li {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .nav-bar > ul > li > a {
+    display: table;
+    width: 100%;
+    padding: 0;
+  }
+  .nav-bar > ul > li > a > span {
+    display: table-cell;
+    padding: 0 10px;
+    height: 40px;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .nav-bar > ul > li > ul {
+    position: absolute;
+  }
+
+  .nav-bar .has-sub span:after {
+    position: static;
+    margin-top: 10px;
+  }
+  .nav-bar ul ul .has-sub:after {
+    right: 5px;
+  }
+
+  .nav-bar ul li li {
+    margin: 5px;
+  }
+  .nav-bar ul li li li {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .nav-bar ul ul a {
+    padding: 3px 15px;
+    background: #999;
+  }
+
+  .nav-bar ul ul a:hover,
+  .nav-bar ul ul a:focus,
+  .nav-bar ul ul .opened > a {
+    color: #000;
+    background: #ddd;
+  }
+
+  /* ================= HOVER FALLBACK IF JAVASCRIPT IS DISABLED ================= */
+
+  .no-js .nav-bar ul ul li:hover > a {
+    color: #000;
+    background: #ddd;
+  }
+}
+
+/*  ACCORDION NAVIGATION
+    ================================================================*/
+
+/* ------------- CURRENTLY KEEPS SMALL SCREEN STYLES -------------- */
+
+/*  DROP DOWN NAVIGATION
+    ================================================================*/
+
+@media (min-width: $bp-mw) {
+  [data-type="dropdown"] ul {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    min-width: 180px;
+    background: #333;
+    -wekbit-transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out,
+      left 0.4s ease-in-out, right 0.4s ease-in-out;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out,
+      left 0.4s ease-in-out, right 0.4s ease-in-out;
+  }
+  [data-type="dropdown"] ul ul {
+    top: -5px;
+  }
+  [data-type="dropdown"] .opened > ul {
+    left: 100%;
+    max-height: 80em;
+    opacity: 1;
+  }
+
+  li[data-type="dropdown"]:nth-last-child(-n + 2) ul {
+    left: auto;
+    right: 0;
+  }
+  li[data-type="dropdown"]:nth-last-child(-n + 2) .opened > ul {
+    left: auto;
+    right: 100%;
+  }
+
+  .nav-bar ul li[data-type="dropdown"] li li {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  [data-type="dropdown"] a + .has-sub {
+    width: 0;
+    min-height: 0;
+    height: 100%;
+  }
+  [data-type="dropdown"] a + .has-sub > span {
+    min-height: 0;
+    height: 100%;
+  }
+
+  /* ================= HOVER FALLBACK IF JAVASCRIPT IS DISABLED ================= */
+
+  .no-js .cm-menu [data-type="dropdown"] li:hover > ul {
+    left: 100%;
+  }
+  .no-js .cm-menu [data-type="dropdown"]:nth-last-child(-n + 2) ul {
+    left: auto;
+    right: 0;
+  }
+  .no-js .cm-menu [data-type="dropdown"]:nth-last-child(-n + 2) li:hover > ul {
+    left: auto;
+    right: 100%;
+  }
+}
+
+/*  SLIDING MENU NAVIGATION ADJUSTMENTS
+    ================================================================*/
+
+[data-type="sliding"].opened .cm-sliding-menu,
+[data-type="sliding"].opened .cm-sliding-menu ul {
+  max-width: 100%;
+}
+
+.cm-menu [data-type="sliding"].opened .cm-sliding-menu > ul {
+  max-height: 80em;
+  opacity: 1;
+}
+.cm-menu [data-type="sliding"].animated .cm-sliding-menu > ul {
+  overflow: visible;
+  z-index: 10;
+}
+.cm-menu [data-type="sliding"].animating .cm-sliding-menu {
+  z-index: -1;
+}
+
+@media (min-width: $bp-mw) {
+  [data-type="sliding"] .cm-sliding-menu {
+    position: absolute;
+    -wekbit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  [data-type="sliding"] .cm-sliding-menu > ul {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 100%;
+    left: 0;
+    width: 180px;
+    background: #333;
+    -wekbit-transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out,
+      left 0.4s ease-in-out, right 0.4s ease-in-out;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out,
+      left 0.4s ease-in-out, right 0.4s ease-in-out;
+  }
+
+  [data-type="sliding"] .cm-sliding-menu > ul li {
+    position: static;
+  }
+  [data-type="sliding"] .cm-sliding-menu > ul > li > ul {
+    position: absolute;
+    top: 0;
+  }
+
+  [data-type="sliding"] .cm-sliding-menu > ul ul {
+    position: absolute;
+    top: 0;
+  }
+
+  [data-type="sliding"] .cm-sliding-menu ul ul ul {
+    position: static;
+    margin: 0;
+    padding: 0;
+    max-height: 80em;
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    opacity: 1;
+  }
+
+  [data-type="sliding"] .cm-sliding-menu ul ul .has-sub {
+    color: #fff;
+    cursor: default;
+  }
+  [data-type="sliding"] .cm-sliding-menu ul ul .has-sub {
+    background: none;
+    border-bottom: 1px solid #fff;
+  }
+  [data-type="sliding"] .cm-sliding-menu ul ul .has-sub:after,
+  [data-type="sliding"] .cm-sliding-menu ul ul .expander-wrap .has-sub {
+    display: none;
+  }
+
+  [data-type="sliding"] .cm-sliding-menu > ul > li > ul > li {
+    float: left;
+    width: 50%;
+    padding: 0 5px;
+  }
+  [data-type="sliding"] .cm-sliding-menu > ul > li > ul > li:nth-child(2n + 1) {
+    clear: left;
+  }
+  [data-type="sliding"] .cm-sliding-menu > ul > li > ul > .link-landing {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  [data-type="sliding"]
+    .cm-sliding-menu
+    > ul
+    > li
+    > ul
+    > .link-landing
+    ~ li:nth-child(2n + 1) {
+    clear: none;
+  }
+  [data-type="sliding"]
+    .cm-sliding-menu
+    > ul
+    > li
+    > ul
+    > .link-landing
+    ~ li:nth-child(2n + 2) {
+    clear: left;
+  }
+
+  /* ================= ESSENTIAL SLIDING FUNCTIONALITY ================= */
+
+  [data-type="sliding"] .cm-sliding-menu.cm-js-inactive {
+    position: relative;
+    left: 0 !important;
+    width: 100% !important;
+  }
+  [data-type="sliding"] .cm-sliding-menu.cm-js-inactive > ul {
+    min-width: 100%;
+  }
+  [data-type="sliding"] .cm-sliding-menu.cm-js-inactive > ul > li > ul {
+    padding: 0;
+    max-width: 0;
+  }
+
+  [data-type="sliding"] .cm-sliding-menu > ul ul {
+    width: 100%;
+    margin-left: -5px;
+    padding-left: 180px;
+    padding-right: 5px;
+    z-index: -1;
+    opacity: 0;
+  }
+  [data-type="sliding"] .cm-sliding-menu .animated ul {
+    opacity: 1;
+  }
+
+  [data-type="sliding"].opened .cm-sliding-menu,
+  [data-type="sliding"].opened .cm-sliding-menu ul {
+    max-width: none;
+  }
+
+  /* ================= HOVER FALLBACK IF JAVASCRIPT IS DISABLED ================= */
+
+  .no-js .cm-menu [data-type="sliding"] li:hover > ul {
+    left: 100%;
+  }
+  .no-js .cm-menu [data-type="sliding"]:nth-last-child(-n + 2) ul {
+    left: auto;
+    right: 0;
+  }
+  .no-js .cm-menu [data-type="sliding"]:nth-last-child(-n + 2) li:hover > ul {
+    left: auto;
+    right: 100%;
+  }
+}
+
+/*  MEGA MENU NAVIGATION ADJUSTMENTS
+    ================================================================*/
+
+@media (min-width: $bp-mw) {
+  .cm-menu [data-type="mega"] {
+    position: static;
+  }
+  [data-type="mega"] > ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    background: #333;
+    overflow: hidden;
+    -wekbit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+
+  [data-type="mega"] > ul ul {
+    position: static;
+    max-height: 80em;
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    opacity: 1;
+  }
+  [data-type="mega"] > ul .opened ul {
+    margin-left: 0;
+  }
+  [data-type="mega"] > ul > li {
+    float: left;
+    width: 25%;
+  }
+  [data-type="mega"] > ul > li:nth-child(4n + 1) {
+    clear: left;
+  }
+
+  [data-type="mega"] > ul > .link-landing {
+    margin: 0;
+    width: 100%;
+  }
+  [data-type="mega"] > ul > .link-landing ~ li:nth-child(4n + 1) {
+    clear: none;
+  }
+  [data-type="mega"] > ul > .link-landing ~ li:nth-child(4n + 2) {
+    clear: left;
+  }
+
+  /* ================= OPENED FUNCTIONALITY ADDED ON SETUP ================= */
+
+  [data-type="mega"] a + .has-sub {
+    width: 0;
+    min-height: 0;
+    height: 100%;
+  }
+  [data-type="mega"] a + .has-sub > span {
+    min-height: 0;
+    height: 100%;
+  }
+  [data-type="mega"] ul .has-sub:after {
+    display: none;
+  }
+  [data-type="mega"].opened > ul {
+    padding: 20px;
+  }
+
+  /* ================= SEPARATE EXPANDERS OPTION IS ENABLED ================= */
+
+  [data-type="mega"] ul a + .has-sub {
+    display: none;
+  }
+
+  /* ================= HOVER FALLBACK IF JAVASCRIPT IS DISABLED ================= */
+
+  .no-js .cm-menu [data-type="mega"] ul ul {
+    display: block;
+  }
+}
+
+/*================================================================
+                 NAVIGATION TOGGLE STYLES
+================================================================*/
+
+.toggle-menu {
+  display: block;
+  position: relative;
+  border: 0;
+  width: 50px;
+  height: 46px;
+  background: #333;
+}
+.toggle-menu:before,
+.toggle-menu:after,
+.toggle-menu > span:before {
+  content: " ";
+  position: absolute;
+  left: 15%;
+  border-radius: 2px;
+  width: 70%;
+  height: 3px;
+  background: #fff;
+}
+
+.toggle-menu:before {
+  top: 11px;
+}
+.toggle-menu:after {
+  top: 21px;
+}
+.toggle-menu > span:before {
+  top: 31px;
+}
+
+@media (min-width: $bp-mw) {
+  .toggle-menu {
+    display: none;
+  }
+}
+
+/*================================================================
+                 EXTRA OVERWRITE STYLES
+================================================================*/
+
+.main-nav {
+  position: relative;
+  z-index: 1000;
+}
+
+[data-type="sliding"] .cm-sliding-menu .item-banner {
+  width: 100%;
+}
+[data-type="sliding"] .cm-sliding-menu .item-banner a {
+  text-align: center;
+  background: none;
+}
+
+[data-type="mega"] .custom-sub {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  -wekbit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+}
+[data-type="mega"] .custom-sub ul {
+  position: static;
+  opacity: 1;
+  max-height: 80em;
+}
+[data-type="mega"] .custom-sub ul ul {
+  opacity: 0;
+  max-height: 0;
+}
+
+[data-type="mega"] .custom-sub .banner-wrap {
+  width: 100%;
+}
+[data-type="mega"] .custom-sub .banner-wrap a {
+  text-align: center;
+  background: none;
+}
+
+.cm-menu .opened > .custom-sub,
+.cm-menu .opened > .custom-sub ul .opened > ul {
+  max-height: 80em;
+  opacity: 1;
+}
+.cm-menu .animated > .custom-sub,
+.cm-menu .animated > .custom-sub ul .animated > ul {
+  overflow: visible;
+  z-index: 10;
+}
+.cm-menu .animating > .custom-sub,
+.cm-menu .animating > .custom-sub ul .animating > ul {
+  z-index: -1;
+}
+
+.cm-menu .animated .custom-sub {
+  pointer-events: auto;
+}
+
+@media (min-width: $bp-mw) {
+  [data-type="mega"] .custom-sub {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #333;
+  }
+}
+
+@media (min-width: $bp-mw) {
+  .table-row {
+    display: table;
+    width: 100%;
+  }
+  .table-col {
+    display: table-cell;
+    vertical-align: top;
+  }
+}
+
+.section-nav .opened > ul {
+  border-bottom: 1px solid #d4d4d4;
+  max-height: 80em;
+  opacity: 1;
+}
+.section-nav .opened > a,
+.section-nav .opened > .expander-wrap a {
+  border-bottom: 1px solid #aaa;
+  color: #333;
+  background: #d4d4d4;
+}
+.section-nav .opened .opened > .expander-wrap > a {
+  background: #c4c4c4;
+}
