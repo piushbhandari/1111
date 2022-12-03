@@ -1,0 +1,117 @@
+/* ================================================================
+
+Pagination
+
+   ================================================================ */
+
+   .pagination {
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      padding:10px 0 0 0;
+      border-top:1px solid #999999;
+   
+      &.pagination-top {
+         border-top:0;
+         border-bottom:1px solid #999999;
+         padding:0 0 10px;
+         margin:0 0 20px;
+      }
+   }
+   
+   .pagination__results {
+      @include x-rem(font-size, 14px);
+   }
+   
+   .pagination__list {
+      list-style: none;
+      padding:0;
+      margin:0 0 0 auto;
+      display:flex;
+   }
+   
+   .pagination__list-item {
+   
+   }
+   
+   .pagination__link {
+      padding:3px 6px;
+      display:block;
+      height:30px;
+      width:24px;
+      text-align:Center;
+      position:relative;
+      color:$color-base;
+   
+      svg {
+         width:20px;
+         height:20px;
+         position:absolute;
+         left:50%;
+         top:50%;
+         transform: translateY(-50%) translateX(-50%);
+         fill:$color-secondary;
+      }
+   
+      &:hover,
+      &:focus {
+         @extend .pagination__link--active;
+      }
+   }
+   
+   .pagination__link--active {
+      color:$color-secondary;
+   
+      svg {
+         fill:$color-primary;
+      }
+   }
+   
+   .js-pagination {
+      display:flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding:10px 0 0 0;
+      border-top:1px solid #999999;
+   
+      a {
+          padding:3px 5px;
+          display:block;
+          height:30px;
+          width:22px;
+          text-align:Center;
+          position:relative;
+          color:$color-base;
+      }
+   }
+   .js-pagination-inner {
+      display:flex;
+      align-items: center;
+   }
+   .js-pagination__previous,
+   .js-pagination__next {
+      padding:3px 6px;
+      display:block;
+      height:30px;
+      width:24px;
+      text-align:Center;
+      position:relative;
+      color:$color-base;
+      border:0;
+      background:none;
+      cursor:pointer;
+   
+      svg {
+          width:20px;
+          height:20px;
+          left:50%;
+          top:50%;
+          position: absolute;;
+          transform: translateY(-50%) translateX(-50%);
+          fill:$color-secondary;
+       }
+      &.jp-disabled {
+          display:none;
+      }
+   }
+   
