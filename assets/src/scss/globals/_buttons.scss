@@ -1,0 +1,126 @@
+/* ================================================================
+   Button Styles
+   ================================================================ */
+
+.button,
+.btn {
+  border-radius: 30px;
+  display: inline-block;
+  padding: 1.25rem 1.875rem;
+  border: 0;
+  font-family: $font-primary;
+  color: $color-white;
+  text-decoration: none;
+  text-align: center;
+  background: $color-primary;
+  cursor: pointer;
+  transition: $trans;
+  line-height: 1.4;
+
+  &--orange {
+    background: $orange-btn-bg;
+  }
+  &--dark-blue {
+    background: $blue-btn-bg;
+  }
+  &--form-btn {
+    padding: 9px 0;
+    width: 100%;
+    max-width: 12.5rem;
+  }
+  &--submit {
+    @include breakpoint(48em) {
+      position: absolute;
+      width: 100%;
+      max-width: 12.5rem;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background: $color-secondary;
+  }
+}
+.button-2 {
+  display: inline-block;
+  padding: 0.47em 1.2em;
+  border: 0;
+  font-family: $font-primary;
+  color: $color-invert;
+  text-decoration: none;
+  text-align: center;
+  background: $color-secondary;
+  cursor: pointer;
+  transition: $trans;
+  line-height: 1.4;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background: $color-invert;
+    color: $color-primary;
+  }
+}
+
+.back {
+  @extend .button-small !optional;
+  text-transform: capitalize;
+}
+
+.more {
+  @extend .button-small !optional;
+  text-transform: capitalize;
+}
+
+%carousel-btn {
+  @include resetBtn;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  font-size: 0;
+  color: $color-primary;
+  transition: $trans;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  svg {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    transition: $trans;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-secondary;
+  }
+
+  @media (min-width: $bp-mw) {
+    width: 60px;
+    height: 60px;
+  }
+}
+.btn-more {
+  background: $color-red;
+  color: $color-black;
+  width: 100%;
+  max-width: 50rem;
+  display: block;
+  font-size: 2rem;
+  &:active,
+  &:focus,
+  &:hover {
+    background: $color-black;
+    color: $color-red;
+    transform: translate(1rem, -1rem);
+  }
+}
